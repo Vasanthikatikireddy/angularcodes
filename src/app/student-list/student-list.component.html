@@ -1,0 +1,26 @@
+<table style ="width:100%">
+    
+    <tr>
+     <th class="tableHead"> Name</th>
+     <th class="tablehead"> Mobile</th>
+     <th class="tablehead"> gender</th>
+     <th class="tablehead"> country</th>
+      
+    </tr>
+
+    <tbody>
+        <tr *ngFor ="let item of stuData">
+            
+          <td> <span> {{item.Name}} </span> </td>
+          <td> <span> {{item.Mobile}} </span> </td>
+          <td> <span> {{item.gender}} </span> </td>
+          <td> <span> {{item.country}} </span> </td>
+            
+        </tr> 
+    </tbody>
+  </table>
+  
+ 
+
+ <router-outlet></router-outlet>
+        

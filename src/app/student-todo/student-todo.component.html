@@ -1,0 +1,89 @@
+<div class="container-fluid">
+
+    <div class="row bg-success justify-content-center
+                align-items-center" style="height:80px" style="background-color: green;">
+        <div class="col-3"></div>
+        <div class="col-6 text-light h2">
+            Todo List Data
+        </div>
+    </div>
+
+    <table style="width:100%">
+        <tr>
+            <th class="tableHead"> list Data </th>
+        </tr>
+        <div class="row mt-1" style="height:80px;">
+
+        </div>
+        <tbody>
+            <tr>
+                <div *ngFor="let x of items; let index = index;">
+
+                    <td><span>
+                            <ol>
+                                <li><input type="checkbox" (click)="checkValue($event,x,index)"><del>{{x}}</del></li>
+                            </ol>
+                        </span></td>
+                    <td><span>
+                            <input (click)="deleteTask(index,x)" type="button" value="Delete"
+                                class="col-12 btn btn-danger"></span></td>
+                </div>
+            </tr>
+        </tbody>
+
+    </table>
+    <button style="margin: 50px; padding: 5px" type="button" class="btn action_btn" class="btn btn-primary"
+        (click)="openPopup()">Add Task
+    </button>
+</div>
+<table style="width:100%"  *ngIf="check.length > 0">
+    <tr>
+        <th class="tableHead"> Deleted Data </th>
+    </tr>
+    <tbody>
+
+        <tr>
+            <div *ngFor="let y of check;let index = index">
+                <td><span>
+                        <ol>
+                            <li>
+                                <input type=checkbox value="" [checked]="y" />
+                                <span [style.textDecoration]="y ? 'line-through': '' "><del> {{y}} </del> </span>
+                            </li>
+                        </ol>
+                    </span></td>
+                <td><span>
+                        <input (click)="editTask(index,y)" type="button" value="Edit"
+                            class="col-12 btn btn-danger"></span></td>
+
+            </div>
+        </tr>
+        {{check | json}}
+
+    </tbody>
+</table>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Task Data</h4>
+            </div>
+            <div class="modal-body">
+                <p> Add Details </p>
+                <label for="Name"> Enter Data: </label>
+                <input [(ngModel)]="newTask" type="text" value="" class="col-3 form-control" style="width:100px;">
+
+                <div class="modal-footer">
+                    <div class="action_btn">
+                        <div class="col-16">
+                            <button (click)="addToList()" class="btn btn-primary" class="btn btn-light text-success">ADD
+                                TASK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

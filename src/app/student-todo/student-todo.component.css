@@ -1,0 +1,24 @@
+ol li del {
+    text-decoration: none;
+
+}
+ol li input[type=checkbox]:checked ~ del {
+    text-decoration:  line-through;
+}
+
+.todo-complete {
+    text-decoration: line-through;
+  }
+
+  .todo-checkbox {
+    flex-shrink: 0;
+    margin: auto 1ex auto 0;
+  }
+
+  table,th,td{
+    border:1px Solid black;
+  }
+
+  input[type=checkbox]:checked + label.strikethrough{
+    text-decoration: line-through;
+  }

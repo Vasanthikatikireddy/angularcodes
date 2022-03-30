@@ -1,0 +1,15 @@
+<div style ="text-align: center;">
+  <h1>
+    Student Registration
+  </h1>
+  </div>
+
+  <nav>
+    <ul>
+     <li><button [routerLink]="['/studentform']"  routerLinkActive="active" > Student form </button></li>
+     <li><button [routerLink]="['/studentlist']"  routerLinkActive="active"  > Student list </button></li>
+     <li><button [routerLink]="['/studenttodo']" routerLinkActive="active"  >Student todo</button></li>
+    </ul>
+  </nav>
+
+<router-outlet></router-outlet>

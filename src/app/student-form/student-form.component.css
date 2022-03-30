@@ -1,0 +1,10 @@
+ol li del {
+    text-decoration: none;
+
+}
+ol li input[type=checkbox]:checked ~ del {
+    text-decoration:  line-through;
+}
+table,th,td{
+    border:1px Solid black;
+  }
